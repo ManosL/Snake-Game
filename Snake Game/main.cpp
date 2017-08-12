@@ -11,23 +11,26 @@
 
 using namespace std;
 
+#define WIDTH 20
+#define HEIGHT 20
+
 class GameManager{
 private: 
 	Food* food;
 	Snake* snake;
 	char up,down,left,right;
 	char quit;
-	int score,width,length;
+	int score,width,height;
 
 public:
-	GameManager(int w,int l){
+	GameManager(int w,int h){
 		up = 'w'; down = 's' ; 
 		left = 'a'; right = 'd';
 		quit = 'q';
 		width = w;
-		length = l;
-		snake = new Snake(width,length);
-		food = new Food(snake,width,length);		
+		height = h;
+		snake = new Snake(width,height);
+		food = new Food(snake,width,height);		
 		score = 0;
 	}
 
@@ -71,7 +74,7 @@ public:
 				snake->Snake_Move();
 			}
 
-			if(snake->Snake_Crashed(width,length)){
+			if(snake->Snake_Crashed(width,height)){
 				cout<<"Game Over"<<endl<<"Thanks for playing"<<endl;
 				cout<<"Score = "<<score<<endl;
 				return;
@@ -81,14 +84,14 @@ public:
 				score += 10;
 				snake->Snake_Extend();
 
-				if(snake->Snake_getSize() == width*length){
+				if(snake->Snake_getSize() == width*height){
 					cout<<"You are amazing! You finished the game"<<endl;
 					cout<<"Score = "<<score;
 					return;
 				}
 
 				delete food;
-				food = new Food(snake,width,length); 
+				food = new Food(snake,width,height); 
 			}			
 
 			printf("\033[2J\033[1;1H"); //clear();
@@ -106,7 +109,7 @@ public:
 
 		cout<<endl;
 
-		for(int i=0;i<length;i++){
+		for(int i=0;i<height;i++){
 			cout<<"#";
 			for(int j=0;j<width;j++){
 				if(food->Food_getX() == j && food->Food_getY() == i){
@@ -140,7 +143,7 @@ int main(){
 
 	srand(time(NULL));
 
-	snake_game = new GameManager(20,20);
+	snake_game = new GameManager(WIDTH,HEIGHT);
 	snake_game->Run();
 
 	delete snake_game;

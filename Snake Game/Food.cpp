@@ -5,12 +5,12 @@
 
 using namespace std;
 
-Food::Food(Snake* snake,int width,int length){
+Food::Food(Snake* snake,int width,int height){
 	x = rand() % width;
-	y = rand() % length;
+	y = rand() % height;
 
 	while(snake->Snake_Search(x,y) == 1){
 		x = rand() % width;
-		y = rand() % length;
+		y = rand() % height;
 	}	
 }

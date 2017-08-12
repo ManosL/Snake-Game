@@ -6,8 +6,8 @@
 
 using namespace std;
 
-Snake::Snake(int width,int length){
-	head = new Snake_Body(width,length);
+Snake::Snake(int width,int height){
+	head = new Snake_Body(width,height);
 	tail = head;
 	size = 1;
 }
@@ -40,7 +40,7 @@ void Snake::Snake_Extend(){
 	size++;
 }
 
-int Snake::Snake_Crashed(int width,int length){
+int Snake::Snake_Crashed(int width,int height){
 	Snake_Body* current = tail;
 
 	while(current != head){
@@ -52,7 +52,7 @@ int Snake::Snake_Crashed(int width,int length){
 
 	if((head->SnakeBody_getX() == width) || (head->SnakeBody_getX() == -1))
 		return 1;
-	else if((head->SnakeBody_getY() == length) || (head->SnakeBody_getY() == -1))
+	else if((head->SnakeBody_getY() == height) || (head->SnakeBody_getY() == -1))
 		return 1;
 	else
 		return 0;

@@ -3,11 +3,11 @@
 
 using namespace std;
 
-Snake_Body::Snake_Body(int width,int length){ /*constructor if I create only the head*/
+Snake_Body::Snake_Body(int width,int height){ /*constructor if I create only the head*/
 	next = NULL;
 	direction = UP;
 	x = width / 2;
-	y = length / 2;	
+	y = height / 2;	
 }
 
 Snake_Body::Snake_Body(Snake_Body* tail){  /*constructor if snake has length >= 1 boxes*/
