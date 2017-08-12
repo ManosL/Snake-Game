@@ -1,3 +1,5 @@
+# Snake-Game
+
 Hello,
 
 This is my first game on C++ which is the classic snake game.
