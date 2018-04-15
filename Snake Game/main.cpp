@@ -104,28 +104,28 @@ public:
 	void Draw(){
 
 		for(int i=0;i<width+2;i++){
-			cout<<"#";
+			cout<<"\033[1;42m \033[0m";
 		}
 
 		cout<<endl;
 
 		for(int i=0;i<height;i++){
-			cout<<"#";
+			cout<<"\033[1;42m \033[0m";
 			for(int j=0;j<width;j++){
 				if(food->Food_getX() == j && food->Food_getY() == i){
-					cout<<"F";
+					cout<<"\033[1;41m \033[0m";
 				}
 				else if(snake->Snake_Search(j,i)){
-					cout<<"ꔷ";
+					cout<<"\033[1;42m \033[0m";
 				}
 				else
 					cout<<" ";
 			}
-			cout<<"#"<<endl;
+			cout<<"\033[1;42m \033[0m"<<endl;
 		}
 
 		for(int i = 0;i<width+2;i++){
-			cout<<"#";
+			cout<<"\033[1;42m \033[0m";
 		}
 		cout<<endl;
 
