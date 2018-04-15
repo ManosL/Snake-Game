@@ -26,5 +26,7 @@ Note: In the file ready_functions.c the functions kbhit,getch and
   getchar_silent I took them ready because I don't know how to use
   the libraries that helped me with these functions.
   
+UPDATE: Just tried to put some colors
+
   If you find any bugs contact me. Thanks for your time.
   
